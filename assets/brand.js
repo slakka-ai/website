@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-slakka-wordmark]').forEach((el)=>{el.innerHTML='sla<span class="wordmark-k">k</span>ka';});

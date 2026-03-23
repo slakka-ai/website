@@ -1,0 +1,3 @@
+.site-footer a:hover, .site-footer a[href^="mailto:"]:hover {
+  color: #E97132; /* Slakka red tone */
+}
