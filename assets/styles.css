@@ -18,3 +18,61 @@ label select {
 label select:focus{outline:none;box-shadow:0 0 0 3px rgba(78,149,217,0.08);border-color:#4E95D9}
 
 label select option{ color: inherit; background: #171717;}
+
+
+.hero-art video{
+  width:100%;
+  max-width:420px;
+  height:auto;
+  display:block;
+  border-radius:20px;
+  box-shadow:0 16px 40px rgba(0,0,0,.35)
+}
+
+.org-card-photo{
+  background:transparent;
+  color:#111;
+  min-height:auto;
+  height:auto;
+  padding:.5rem;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:.7rem;
+  max-width:132px;
+  margin:0 auto;
+}
+.org-avatar-photo{
+  width:100%;
+  height:auto;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  border-radius:18px;
+  background:#f3f3f3;
+  padding:0;
+  box-shadow:0 10px 24px rgba(0,0,0,.08)
+}
+.org-meta-photo{
+  align-items:center;
+  text-align:center;
+}
+.org-note-photo{
+  color:#111;
+  font-size:.9rem;
+  line-height:1.2;
+}
+
+.kapp-hero-video-section{
+  width:100%;
+  margin-top:-1.5rem;
+  position:relative;
+  z-index:2;
+}
+.kapp-hero-video{
+  width:100%;
+  display:block;
+  object-fit:cover;
+}
+.kapp-contact{
+  padding-top:3rem;
+}
