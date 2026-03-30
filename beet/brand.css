@@ -1,0 +1,66 @@
+:root{
+  --accent:#FFC000;
+  --accent-2:#FFFDB4;
+}
+
+.page-hero{
+  background:var(--accent-2) !important;
+  color:#111 !important;
+  padding-bottom:3rem;
+}
+.page-hero .lead,
+.page-hero h1{
+  color:#111 !important;
+}
+.site-nav>a:hover,
+.nav-label:hover,
+.dropdown a:hover,
+.inline-about-link,
+.wordmark-accent,
+.title-underline{
+  color:var(--accent);
+}
+.title-underline,
+.btn,
+.btn:hover,
+.btn:focus-visible{
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.btn:hover,
+.btn:focus-visible{
+  box-shadow:0 0 0 4px rgba(255,255,255,.25);
+}
+.kapp-contact .section-head h2{
+  color:#111;
+}
+.kapp-contact .inline-about-link{
+  color:var(--accent);
+}
+.contact-cta-card a:hover,
+.site-nav a:hover{
+  color:var(--accent);
+}
+.site-nav .btn.btn-small:hover,
+.site-nav .btn.btn-small:focus-visible{
+  color:var(--accent-2);
+}
+.kapp-hero-video-section{
+  position:relative;
+}
+.kapp-hero-video-section::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,.5);
+  pointer-events:none;
+}
+.kapp-hero-video-section .kapp-hero-video{
+  position:relative;
+  z-index:0;
+  width:100%;
+  display:block;
+}
+.slakka-accent{
+  color:#C00000;
+}
