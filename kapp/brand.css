@@ -1,0 +1,41 @@
+:root{
+  --accent:#4E95D9;
+  --accent-2:#A6CAEC;
+}
+
+.page-hero{
+  background:#A6CAEC !important;
+  color:#111 !important;
+  padding-bottom:3rem;
+}
+.page-hero .lead,
+.page-hero h1{
+  color:#111 !important;
+}
+.site-nav>a:hover,
+.nav-label:hover,
+.dropdown a:hover,
+.inline-about-link,
+.wordmark-k,
+.title-underline{
+  color:var(--accent);
+}
+.title-underline,
+.btn,
+.btn:hover,
+.btn:focus-visible{
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.btn:hover,
+.btn:focus-visible{
+  box-shadow:0 0 0 4px rgba(166,202,236,.45);
+}
+.kapp-contact .section-head h2,
+.kapp-contact .inline-about-link{
+  color:var(--accent);
+}
+.contact-cta-card a:hover,
+.site-nav a:hover{
+  color:var(--accent);
+}
