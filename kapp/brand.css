@@ -47,14 +47,3 @@
   color:var(--accent-2);
 }
 
-.kapp-hero-video-section::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,.5);
-  pointer-events:none;
-}
-.kapp-hero-video-section .kapp-hero-video{
-  position:relative;
-  z-index:0;
-}
