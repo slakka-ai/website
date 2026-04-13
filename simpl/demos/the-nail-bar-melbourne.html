@@ -6,175 +6,31 @@
   <title>The Nail Bar Melbourne demo by simpl</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <style>
-    :root { --accent: #8d5cf6; --accent-soft: #eee8ff; --ink: #1f1720; --muted: #6b606b; --card: rgba(255,255,255,.86); --line: rgba(31,23,32,.08); --bg: #fffafc; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: linear-gradient(180deg, #fffafc 0%, #ffffff 55%, #fff7fb 100%); }
-    a { color: inherit; }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-    .site-top { padding: 24px 0 10px; }
-    .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 14px 18px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.72); backdrop-filter: blur(10px); }
-    .brand { font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
-    .brand small { display:block; font-size:12px; color: var(--muted); font-weight: 600; letter-spacing: .16em; margin-top: 4px; }
-    .nav { display:flex; gap:18px; font-size:14px; color: var(--muted); }
-    .hero { padding: 28px 0 42px; }
-    .hero-grid { display:grid; grid-template-columns: 1.08fr .92fr; gap: 26px; align-items: stretch; }
-    .hero-copy, .hero-visual { border: 1px solid var(--line); border-radius: 30px; background: rgba(255,255,255,.74); }
-    .hero-copy { padding: 40px; box-shadow: 0 24px 70px rgba(48,24,53,.06); }
-    .eyebrow { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: .18em; font-weight: 800; }
-    h1, h2 { font-family: 'Cormorant Garamond', serif; margin: 0; line-height: .95; letter-spacing: -.03em; }
-    h1 { font-size: clamp(54px, 7vw, 92px); margin-top: 14px; max-width: 10ch; }
-    .lead { font-size: 19px; line-height: 1.7; color: var(--muted); max-width: 60ch; margin: 22px 0 28px; }
-    .actions { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; padding: 15px 22px; border-radius: 999px; text-decoration:none; font-weight: 700; }
-    .btn-primary { background: var(--ink); color: #fff; }
-    .btn-secondary { background: var(--accent-soft); color: var(--ink); }
-    .stat-row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
-    .stat { padding: 16px; border-radius: 20px; background: var(--accent-soft); }
-    .stat strong { display:block; font-size: 14px; }
-    .stat span { display:block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.5; }
-    .hero-visual { position: relative; overflow: hidden; padding: 26px; background: linear-gradient(135deg, rgba(255,255,255,.95), var(--accent-soft)); min-height: 620px; }
-    .hero-visual::before { content:''; position:absolute; inset:auto -70px -110px auto; width: 260px; height: 260px; background: radial-gradient(circle, rgba(255,255,255,.88), rgba(255,255,255,0)); }
-    .panel { position:relative; z-index:1; background: rgba(255,255,255,.92); border-radius: 28px; border:1px solid rgba(31,23,32,.08); box-shadow: 0 24px 60px rgba(30,21,31,.08); }
-    .screen-main { padding: 22px; }
-    .screen-nav, .price-chip-row, .contact-mini { display:flex; gap:10px; flex-wrap:wrap; }
-    .chip { padding: 8px 12px; border-radius: 999px; background: var(--accent-soft); font-size: 12px; font-weight: 700; }
-    .gallery { display:grid; grid-template-columns: 1.3fr .7fr; gap: 14px; margin-top: 16px; }
-    .gallery-card { border-radius: 24px; min-height: 220px; background: linear-gradient(160deg, rgba(255,255,255,.35), rgba(255,255,255,.05)), linear-gradient(135deg, var(--accent), #fff); position: relative; overflow:hidden; }
-    .gallery-card.small { min-height: 103px; }
-    .gallery-card::after { content:''; position:absolute; inset:16px; border-radius: 18px; border:1px solid rgba(255,255,255,.4); }
-    .quote-card { margin-top: 14px; padding: 16px 18px; background: #fff; border-radius: 22px; border:1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.6; }
-    .section { padding: 18px 0 34px; }
-    .section-head { display:flex; justify-content:space-between; gap:16px; align-items:end; margin-bottom: 18px; }
-    .section-head p { margin:0; color: var(--muted); max-width: 56ch; line-height:1.6; }
-    .cards3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .card { background: rgba(255,255,255,.82); border:1px solid var(--line); border-radius: 26px; padding: 24px; box-shadow: 0 16px 40px rgba(30,21,31,.05); }
-    .card p { margin: 10px 0 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
-    .offer-price { display:inline-block; margin-top: 14px; padding: 7px 11px; border-radius: 999px; background: var(--accent-soft); font-weight: 700; font-size: 12px; }
-    .split { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .info-block { background:#fff; border:1px solid var(--line); border-radius: 26px; padding: 24px; }
-    .list { display:grid; gap:12px; margin-top: 14px; }
-    .list-item { display:flex; gap:12px; align-items:flex-start; }
-    .bullet { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 7px; }
-    .contact { background: #1f1720; color:#fff; border-radius: 30px; padding: 30px; display:grid; grid-template-columns: 1.2fr .8fr; gap: 20px; }
-    .contact p, .contact a { color: rgba(255,255,255,.82); line-height:1.7; }
-    .contact-card { background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius: 24px; padding: 20px; }
-    .mono { font-size: 13px; letter-spacing: .02em; }
-    @media (max-width: 980px) { .hero-grid, .cards3, .split, .contact { grid-template-columns: 1fr; } .stat-row { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr; } .nav { display:none; } }
+    :root{--lilac:#c7b8ff;--ice:#f3f1ff;--ink:#17141f;--muted:#625d74;--line:rgba(23,20,31,.08);--deep:#1d1630}
+    *{box-sizing:border-box} body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#f7f5ff 0%,#fff 52%,#f3efff 100%)} a{text-decoration:none;color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px}.site-top{padding:24px 0 10px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.78)}
+    .brand{font-weight:800;letter-spacing:.04em;text-transform:uppercase}.brand small{display:block;margin-top:4px;color:var(--muted);font-size:12px;letter-spacing:.18em}.nav{display:flex;gap:18px;font-size:14px;color:var(--muted)} .hero{padding:26px 0 40px}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.hero-copy{padding:46px;border-radius:34px;background:rgba(255,255,255,.92);border:1px solid var(--line);box-shadow:0 24px 60px rgba(40,30,70,.06)} .hero-visual{border-radius:34px;overflow:hidden;background:linear-gradient(160deg,#1f1834 0%,#2a1f46 55%,#8c79ff 140%);color:#fff;min-height:700px;padding:30px;position:relative}
+    .hero-visual:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.16),transparent 25%),radial-gradient(circle at 80% 85%,rgba(199,184,255,.35),transparent 28%),linear-gradient(180deg,transparent,rgba(0,0,0,.08))}
+    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#8f76ff} h1,h2{font-family:Prata,serif;margin:0;line-height:1.02;letter-spacing:-.03em} h1{font-size:clamp(54px,7vw,92px);margin-top:14px;max-width:9ch}
+    .lead{margin:22px 0 30px;color:var(--muted);font-size:19px;line-height:1.75}.actions{display:flex;gap:14px;flex-wrap:wrap}.btn{padding:15px 22px;border-radius:999px;font-weight:800;display:inline-flex}.btn-primary{background:var(--ink);color:#fff}.btn-secondary{background:var(--ice);color:var(--ink)}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{padding:16px;border-radius:20px;background:#f0edff}.stat strong{display:block;font-size:14px}.stat span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.5}
+    .dashboard,.mini-panel,.note-card{border-radius:28px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);backdrop-filter:blur(8px)} .dashboard{padding:24px}.mini-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:16px}.dashboard-main{border-radius:24px;min-height:270px;background:linear-gradient(140deg,#f4f0ff 0%,#d7ccff 45%,#8f76ff 100%);position:relative;overflow:hidden}.dashboard-main:after{content:'';position:absolute;inset:18px;border-radius:18px;border:1px solid rgba(255,255,255,.42)} .dashboard-side{display:grid;gap:16px}.mini-panel{min-height:127px;padding:18px;display:flex;align-items:flex-end}.mini-panel:first-child{background:rgba(255,255,255,.08)} .mini-panel:last-child{background:rgba(255,255,255,.12)}
+    .capsule-row{display:flex;gap:10px;flex-wrap:wrap}.capsule{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.12);font-size:12px;font-weight:800}.note-card{padding:22px;margin-top:16px;font-size:14px;line-height:1.7;color:rgba(255,255,255,.8)}
+    .section{padding:18px 0 34px}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:18px}.section-head p{margin:0;color:var(--muted);max-width:56ch;line-height:1.65}.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.info-block{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:28px;padding:24px}.card p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}.offer-price{display:inline-block;margin-top:14px;padding:7px 11px;border-radius:999px;background:#f0edff;font-weight:800;font-size:12px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.list{display:grid;gap:12px;margin-top:14px}.list-item{display:flex;gap:12px;align-items:flex-start}.bullet{width:10px;height:10px;border-radius:50%;background:#8f76ff;margin-top:7px}.contact{background:#17141f;color:#fff;border-radius:32px;padding:30px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.contact p,.contact a{color:rgba(255,255,255,.82);line-height:1.7}.contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:20px}.mono{font-size:13px;letter-spacing:.03em}
+    @media (max-width:980px){.hero-grid,.cards3,.split,.contact,.stat-row,.mini-grid{grid-template-columns:1fr}.nav{display:none}}
   </style>
 </head>
 <body>
-  <div class="wrap site-top">
-    <div class="topbar">
-      <div class="brand">The Nail Bar Melbourne<small>simpl demo concept for Melbourne CBD</small></div>
-      <div class="nav"><span>services</span><span>gallery</span><span>pricing</span><span>contact</span></div>
-    </div>
-  </div>
+  <div class="wrap site-top"><div class="topbar"><div class="brand">The Nail Bar Melbourne<small>city-premium booking concept</small></div><div class="nav"><span>city bookings</span><span>services</span><span>reviews</span><span>contact</span></div></div></div>
   <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">modern salon website concept</div>
-          <h1>A booking-led salon site for high-intent CBD traffic.</h1>
-          <p class="lead">This version leans into speed, clarity, and premium practicality so someone searching in the city can understand the offer and book fast.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#contact">See appointment options</a>
-            <a class="btn btn-secondary" href="https://maps.google.com/?q=The+Nail+Bar+Melbourne">Online presence</a>
-          </div>
-          <div class="stat-row">
-            <div class="stat"><strong>4.9 ★ city clients</strong><span>Trust signal placed high on the page.</span></div>
-            <div class="stat"><strong>express manicures, gels, builder gel, city lunch-break appointments</strong><span>Offer framed with clearer service intent.</span></div>
-            <div class="stat"><strong>Mobile first</strong><span>Designed to feel cleaner and simpler on phones.</span></div>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="panel screen-main">
-            <div class="screen-nav">
-              <span class="chip">Book now</span>
-              <span class="chip">Top services</span>
-              <span class="chip">Reviews</span>
-            </div>
-            <div class="gallery">
-              <div class="gallery-card"></div>
-              <div>
-                <div class="gallery-card small"></div>
-                <div class="gallery-card small" style="margin-top:14px;"></div>
-              </div>
-            </div>
-            <div class="quote-card">
-              <strong style="display:block; color: var(--ink); margin-bottom:8px;">Hero section direction</strong>
-              Calm luxury styling, one dominant call-to-action, cleaner whitespace, and clearer proof points. This is closer to best-practice salon sites than the earlier abstract demo pass.
-            </div>
-            <div class="price-chip-row" style="margin-top:14px;">
-              <span class="chip">City express mani</span>
-              <span class="chip">Builder gel infill</span>
-              <span class="chip">After-work refresh</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">why this works better</div>
-            <h2>Built more like a real local business homepage</h2>
-          </div>
-          <p>The earlier mockups proved throughput, but this pass is intentionally closer to the kind of clean, conversion-led salon sites Kunal referenced tonight.</p>
-        </div>
-        <div class="cards3">
-          <div class="card"><strong>Visual polish</strong><p>High-contrast booking prompts tuned for fast mobile decisions.</p></div>
-          <div class="card"><strong>Offer clarity</strong><p>Service cards focused on lunchtime and after-work convenience.</p><span class="offer-price">Menu preview + CTA</span></div>
-          <div class="card"><strong>Booking intent</strong><p>Cleaner trust and contact section for CBD conversion intent.</p><span class="offer-price">Mobile-friendly funnel</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap split">
-        <div class="info-block">
-          <div class="eyebrow">sample service blocks</div>
-          <h2>Simple packages, stronger hierarchy</h2>
-          <div class="cards3" style="grid-template-columns:1fr; margin-top:18px;">
-            <div class="card"><strong>City express mani</strong><p>Short description, soft pricing anchor, and a clear reason to choose this service.</p></div>
-            <div class="card"><strong>Builder gel infill</strong><p>Stronger visual block for the highest-margin service or trend-led offer.</p></div>
-            <div class="card"><strong>After-work refresh</strong><p>Third card gives enough menu depth without overwhelming a first-time visitor.</p></div>
-          </div>
-        </div>
-        <div class="info-block">
-          <div class="eyebrow">conversion notes</div>
-          <h2>What simpl would keep on the final live build</h2>
-          <div class="list">
-            <div class="list-item"><div class="bullet"></div><div>Fast mobile-first layout with one clear booking CTA repeated across the page.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Trust layer near the hero: review signal, address, and opening-hours/contact block.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Real image gallery, treatments list, and booking integration added on the final build.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Brand colours and tone tuned to the business rather than a generic salon template.</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap contact" id="contact">
-        <div>
-          <div class="eyebrow" style="color:#f0bddc;">demo target</div>
-          <h2>The Nail Bar Melbourne</h2>
-          <p>10 Collins St, Melbourne, VIC</p>
-          <p>This concept page is a simpl outreach demo, designed to show what a cleaner, more credible local-business website could look like before the full build.</p>
-        </div>
-        <div class="contact-card">
-          <div class="mono">Phone</div>
-          <p>(03) 9654 1182</p>
-          <div class="mono">Email</div>
-          <p>appointments@thenailbar.com.au</p>
-          <div class="mono">Online presence</div>
-          <p><a href="https://maps.google.com/?q=The+Nail+Bar+Melbourne">https://maps.google.com/?q=The+Nail+Bar+Melbourne</a></p>
-        </div>
-      </div>
-    </section>
+    <section class="hero"><div class="wrap hero-grid"><div class="hero-copy"><div class="eyebrow">premium cbd salon direction</div><h1>A polished city-salon page that feels fast, premium, and modern.</h1><p class="lead">This concept keeps the page clean and practical, but with a richer visual system and a stronger premium feel for Melbourne CBD traffic. It is more urban and high-contrast than the other two salon demos.</p><div class="actions"><a class="btn btn-primary" href="#contact">See appointment options</a><a class="btn btn-secondary" href="https://maps.google.com/?q=The+Nail+Bar+Melbourne">View online presence</a></div><div class="stat-row"><div class="stat"><strong>4.9 ★ high-intent local search</strong><span>Trust and convenience surfaced immediately.</span></div><div class="stat"><strong>Express, builder gel, after-work</strong><span>Services framed around CBD behaviour.</span></div><div class="stat"><strong>Distinct premium tone</strong><span>Not soft luxury, not editorial, but sleek and city-led.</span></div></div></div><div class="hero-visual"><div class="dashboard"><div class="capsule-row"><span class="capsule">Book in 30 sec</span><span class="capsule">CBD open late</span><span class="capsule">Top-rated gels</span></div><div class="mini-grid"><div class="dashboard-main"></div><div class="dashboard-side"><div class="mini-panel"><strong>Lunch-break manicure slots</strong></div><div class="mini-panel"><strong>After-work refresh bookings</strong></div></div></div><div class="note-card"><strong style="display:block;color:#fff;margin-bottom:8px">Why this feels different</strong>This direction uses a darker, more architectural visual style so it reads like a sleek premium city salon, not the same aesthetic reused with a different accent colour.</div></div></div></div></section>
+    <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">why this version is stronger</div><h2>A separate visual lane for high-intent CBD search traffic</h2></div><p>This page is deliberately more urban and minimal, with the hierarchy focused on speed, trust, and premium clarity for city appointments.</p></div><div class="cards3"><div class="card"><strong>More premium contrast</strong><p>The darker visual shell creates a stronger high-end look than a pastel-only salon site.</p></div><div class="card"><strong>Faster booking language</strong><p>Copy is tuned around city behaviour, convenience, and quick intent.</p><span class="offer-price">Built for search-to-book</span></div><div class="card"><strong>Clean enough to reuse</strong><p>Still simple to build live, but much more visually specific than a generic demo.</p><span class="offer-price">Distinct but practical</span></div></div></div></section>
+    <section class="section"><div class="wrap split"><div class="info-block"><div class="eyebrow">service structure</div><h2>What the live page could surface next</h2><div class="cards3" style="grid-template-columns:1fr;margin-top:18px"><div class="card"><strong>City express manicure</strong><p>Designed for lunch-break and pre-event decisions.</p></div><div class="card"><strong>Builder gel infills</strong><p>High-margin treatment made more visible in the flow.</p></div><div class="card"><strong>After-work refresh bookings</strong><p>Useful conversion block for the CBD commuter audience.</p></div></div></div><div class="info-block"><div class="eyebrow">live build notes</div><h2>What simpl would keep on the real build</h2><div class="list"><div class="list-item"><div class="bullet"></div><div>Sticky mobile booking CTA and service shortcuts for fast action.</div></div><div class="list-item"><div class="bullet"></div><div>Review snippets, opening hours, and transport cues near the top.</div></div><div class="list-item"><div class="bullet"></div><div>Real gallery imagery swapped into the dashboard visual panels.</div></div><div class="list-item"><div class="bullet"></div><div>Simple menu with services, reviews, location, and booking only.</div></div></div></div></div></section>
+    <section class="section"><div class="wrap contact" id="contact"><div><div class="eyebrow" style="color:#c8b9ff">demo target</div><h2>The Nail Bar Melbourne</h2><p>10 Collins St, Melbourne, VIC</p><p>This simpl concept shows a premium CBD salon direction that feels more urban, modern, and booking-led while still being simple enough for a local business build.</p></div><div class="contact-card"><div class="mono">Phone</div><p>(03) 9654 1182</p><div class="mono">Email</div><p>appointments@thenailbar.com.au</p><div class="mono">Online presence</div><p><a href="https://maps.google.com/?q=The+Nail+Bar+Melbourne">https://maps.google.com/?q=The+Nail+Bar+Melbourne</a></p></div></div></section>
   </main>
 </body>
 </html>

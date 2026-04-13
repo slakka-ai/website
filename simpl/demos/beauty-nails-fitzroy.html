@@ -6,175 +6,73 @@
   <title>Beauty Nails Fitzroy demo by simpl</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root { --accent: #b76aa5; --accent-soft: #f7dceb; --ink: #1f1720; --muted: #6b606b; --card: rgba(255,255,255,.86); --line: rgba(31,23,32,.08); --bg: #fffafc; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: linear-gradient(180deg, #fffafc 0%, #ffffff 55%, #fff7fb 100%); }
-    a { color: inherit; }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-    .site-top { padding: 24px 0 10px; }
-    .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 14px 18px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.72); backdrop-filter: blur(10px); }
-    .brand { font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
-    .brand small { display:block; font-size:12px; color: var(--muted); font-weight: 600; letter-spacing: .16em; margin-top: 4px; }
-    .nav { display:flex; gap:18px; font-size:14px; color: var(--muted); }
-    .hero { padding: 28px 0 42px; }
-    .hero-grid { display:grid; grid-template-columns: 1.08fr .92fr; gap: 26px; align-items: stretch; }
-    .hero-copy, .hero-visual { border: 1px solid var(--line); border-radius: 30px; background: rgba(255,255,255,.74); }
-    .hero-copy { padding: 40px; box-shadow: 0 24px 70px rgba(48,24,53,.06); }
-    .eyebrow { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: .18em; font-weight: 800; }
-    h1, h2 { font-family: 'Cormorant Garamond', serif; margin: 0; line-height: .95; letter-spacing: -.03em; }
-    h1 { font-size: clamp(54px, 7vw, 92px); margin-top: 14px; max-width: 10ch; }
-    .lead { font-size: 19px; line-height: 1.7; color: var(--muted); max-width: 60ch; margin: 22px 0 28px; }
-    .actions { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; padding: 15px 22px; border-radius: 999px; text-decoration:none; font-weight: 700; }
-    .btn-primary { background: var(--ink); color: #fff; }
-    .btn-secondary { background: var(--accent-soft); color: var(--ink); }
-    .stat-row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
-    .stat { padding: 16px; border-radius: 20px; background: var(--accent-soft); }
-    .stat strong { display:block; font-size: 14px; }
-    .stat span { display:block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.5; }
-    .hero-visual { position: relative; overflow: hidden; padding: 26px; background: linear-gradient(135deg, rgba(255,255,255,.95), var(--accent-soft)); min-height: 620px; }
-    .hero-visual::before { content:''; position:absolute; inset:auto -70px -110px auto; width: 260px; height: 260px; background: radial-gradient(circle, rgba(255,255,255,.88), rgba(255,255,255,0)); }
-    .panel { position:relative; z-index:1; background: rgba(255,255,255,.92); border-radius: 28px; border:1px solid rgba(31,23,32,.08); box-shadow: 0 24px 60px rgba(30,21,31,.08); }
-    .screen-main { padding: 22px; }
-    .screen-nav, .price-chip-row, .contact-mini { display:flex; gap:10px; flex-wrap:wrap; }
-    .chip { padding: 8px 12px; border-radius: 999px; background: var(--accent-soft); font-size: 12px; font-weight: 700; }
-    .gallery { display:grid; grid-template-columns: 1.3fr .7fr; gap: 14px; margin-top: 16px; }
-    .gallery-card { border-radius: 24px; min-height: 220px; background: linear-gradient(160deg, rgba(255,255,255,.35), rgba(255,255,255,.05)), linear-gradient(135deg, var(--accent), #fff); position: relative; overflow:hidden; }
-    .gallery-card.small { min-height: 103px; }
-    .gallery-card::after { content:''; position:absolute; inset:16px; border-radius: 18px; border:1px solid rgba(255,255,255,.4); }
-    .quote-card { margin-top: 14px; padding: 16px 18px; background: #fff; border-radius: 22px; border:1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.6; }
-    .section { padding: 18px 0 34px; }
-    .section-head { display:flex; justify-content:space-between; gap:16px; align-items:end; margin-bottom: 18px; }
-    .section-head p { margin:0; color: var(--muted); max-width: 56ch; line-height:1.6; }
-    .cards3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .card { background: rgba(255,255,255,.82); border:1px solid var(--line); border-radius: 26px; padding: 24px; box-shadow: 0 16px 40px rgba(30,21,31,.05); }
-    .card p { margin: 10px 0 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
-    .offer-price { display:inline-block; margin-top: 14px; padding: 7px 11px; border-radius: 999px; background: var(--accent-soft); font-weight: 700; font-size: 12px; }
-    .split { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .info-block { background:#fff; border:1px solid var(--line); border-radius: 26px; padding: 24px; }
-    .list { display:grid; gap:12px; margin-top: 14px; }
-    .list-item { display:flex; gap:12px; align-items:flex-start; }
-    .bullet { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 7px; }
-    .contact { background: #1f1720; color:#fff; border-radius: 30px; padding: 30px; display:grid; grid-template-columns: 1.2fr .8fr; gap: 20px; }
-    .contact p, .contact a { color: rgba(255,255,255,.82); line-height:1.7; }
-    .contact-card { background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius: 24px; padding: 20px; }
-    .mono { font-size: 13px; letter-spacing: .02em; }
-    @media (max-width: 980px) { .hero-grid, .cards3, .split, .contact { grid-template-columns: 1fr; } .stat-row { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr; } .nav { display:none; } }
+    :root { --blush:#f7d9e6; --rose:#cf6f97; --rose-deep:#8d4466; --ink:#271b24; --muted:#6c5a67; --cream:#fffaf7; --line:rgba(39,27,36,.09); }
+    *{box-sizing:border-box} body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff8fb 0%,#fffdfc 48%,#fff4f8 100%)} a{text-decoration:none;color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px} .site-top{padding:24px 0 10px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.72);backdrop-filter:blur(12px)}
+    .brand{font-weight:800;letter-spacing:.04em;text-transform:uppercase}.brand small{display:block;margin-top:4px;color:var(--muted);font-size:12px;letter-spacing:.18em}
+    .nav{display:flex;gap:18px;font-size:14px;color:var(--muted)} .hero{padding:24px 0 40px}
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:24px;align-items:stretch}
+    .hero-copy{padding:48px 44px;border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.88));border:1px solid var(--line);box-shadow:0 30px 70px rgba(75,30,58,.08)}
+    .hero-visual{border-radius:34px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(150deg,#fff 0%,#fbe5ee 55%,#f3c6d8 100%);position:relative;min-height:680px;padding:28px}
+    .eyebrow{color:var(--rose);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.2em}
+    h1,h2{font-family:'Playfair Display',serif;margin:0;line-height:.95;letter-spacing:-.03em} h1{font-size:clamp(58px,8vw,96px);margin-top:14px;max-width:9ch}
+    .lead{margin:22px 0 30px;font-size:19px;line-height:1.75;color:var(--muted);max-width:58ch}
+    .actions{display:flex;gap:14px;flex-wrap:wrap}.btn{padding:15px 24px;border-radius:999px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}.btn-primary{background:var(--ink);color:#fff}.btn-secondary{background:#f8e6ee;color:var(--ink)}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{padding:16px;border-radius:20px;background:#fbecf2}.stat strong{display:block;font-size:14px}.stat span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.5}
+    .visual-shell{position:relative;z-index:1;display:grid;gap:18px}.photo-large,.photo-small,.service-card,.quote{border-radius:28px;background:#fff;border:1px solid rgba(39,27,36,.08);box-shadow:0 22px 54px rgba(72,34,56,.08)}
+    .photo-large{min-height:330px;padding:24px;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.12)),radial-gradient(circle at top right,rgba(255,255,255,.6),transparent 30%),linear-gradient(135deg,#f4adc8,#f8d8e6 48%,#fef4f8)}
+    .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.photo-small{min-height:150px;padding:18px;display:flex;align-items:flex-end;background:linear-gradient(140deg,#fff,#f9dbe8 55%,#f3a7c4)}
+    .service-card{padding:20px;background:rgba(255,255,255,.92)} .service-card strong{display:block;font-size:18px;margin-bottom:8px}.service-card p,.quote,.section-head p,.card p,.contact p,.contact a{color:var(--muted);line-height:1.7}
+    .quote{padding:20px 22px;font-size:14px;background:#fff7fa}.section{padding:18px 0 34px}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:18px}.section-head p{margin:0;max-width:56ch}
+    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.info-block{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 16px 40px rgba(72,34,56,.05)} .card p{margin:10px 0 0;font-size:14px}
+    .offer-price{display:inline-block;margin-top:14px;padding:7px 11px;border-radius:999px;background:#fbe7ef;font-size:12px;font-weight:800}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.list{display:grid;gap:12px;margin-top:14px}.list-item{display:flex;gap:12px;align-items:flex-start}.bullet{width:10px;height:10px;border-radius:50%;background:var(--rose);margin-top:7px}
+    .contact{background:#221820;color:#fff;border-radius:32px;padding:30px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:20px}.mono{font-size:13px;letter-spacing:.03em}
+    @media (max-width:980px){.hero-grid,.cards3,.split,.contact,.photo-grid,.stat-row{grid-template-columns:1fr}.nav{display:none}}
   </style>
 </head>
 <body>
   <div class="wrap site-top">
     <div class="topbar">
-      <div class="brand">Beauty Nails Fitzroy<small>simpl demo concept for Fitzroy</small></div>
-      <div class="nav"><span>services</span><span>gallery</span><span>pricing</span><span>contact</span></div>
+      <div class="brand">Beauty Nails Fitzroy<small>soft luxury salon concept</small></div>
+      <div class="nav"><span>services</span><span>bridal</span><span>gallery</span><span>book</span></div>
     </div>
   </div>
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">modern salon website concept</div>
-          <h1>A cleaner salon website that feels premium from the first scroll.</h1>
-          <p class="lead">This simpl demo is built more like a modern Melbourne nail salon homepage, with clear services, visual hierarchy, trust signals, and one strong booking path.</p>
+          <div class="eyebrow">feminine salon homepage direction</div>
+          <h1>A softer, more elegant salon page for premium local bookings.</h1>
+          <p class="lead">This concept leans into blush tones, editorial typography, and spa-like whitespace so it feels clearly built for a women-led beauty audience, not like a generic service site.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Book an appointment</a>
-            <a class="btn btn-secondary" href="https://maps.google.com/?q=Beauty+Nails+Fitzroy">Online presence</a>
+            <a class="btn btn-primary" href="#contact">Book your appointment</a>
+            <a class="btn btn-secondary" href="https://maps.google.com/?q=Beauty+Nails+Fitzroy">View online presence</a>
           </div>
           <div class="stat-row">
-            <div class="stat"><strong>4.8 ★ Google reviews</strong><span>Trust signal placed high on the page.</span></div>
-            <div class="stat"><strong>BIAB, manicures, spa pedicures, nail art</strong><span>Offer framed with clearer service intent.</span></div>
-            <div class="stat"><strong>Mobile first</strong><span>Designed to feel cleaner and simpler on phones.</span></div>
+            <div class="stat"><strong>4.8 ★ review-led trust</strong><span>Proof placed high without cluttering the page.</span></div>
+            <div class="stat"><strong>Gel, BIAB, spa pedicures</strong><span>Signature services surfaced instantly.</span></div>
+            <div class="stat"><strong>Bridal + occasion-ready tone</strong><span>More aspirational and giftable feel.</span></div>
           </div>
         </div>
         <div class="hero-visual">
-          <div class="panel screen-main">
-            <div class="screen-nav">
-              <span class="chip">Book now</span>
-              <span class="chip">Top services</span>
-              <span class="chip">Reviews</span>
+          <div class="visual-shell">
+            <div class="photo-large"><div><div class="eyebrow">hero mood</div><h2 style="font-size:48px;max-width:7ch">Quiet luxury for a local salon.</h2></div></div>
+            <div class="photo-grid">
+              <div class="photo-small"><strong>bridal details</strong></div>
+              <div class="photo-small" style="background:linear-gradient(140deg,#fff,#f7e1ec 55%,#e6a7c0)"><strong>soft pink palette</strong></div>
             </div>
-            <div class="gallery">
-              <div class="gallery-card"></div>
-              <div>
-                <div class="gallery-card small"></div>
-                <div class="gallery-card small" style="margin-top:14px;"></div>
-              </div>
-            </div>
-            <div class="quote-card">
-              <strong style="display:block; color: var(--ink); margin-bottom:8px;">Hero section direction</strong>
-              Calm luxury styling, one dominant call-to-action, cleaner whitespace, and clearer proof points. This is closer to best-practice salon sites than the earlier abstract demo pass.
-            </div>
-            <div class="price-chip-row" style="margin-top:14px;">
-              <span class="chip">Signature manicure</span>
-              <span class="chip">BIAB overlay</span>
-              <span class="chip">Spa pedicure</span>
-            </div>
+            <div class="service-card"><strong>Signature manicure ritual</strong><p>Turn the top of the page into a clean service story with calming colour, premium spacing, and one obvious booking action.</p></div>
+            <div class="quote"><strong style="display:block;color:var(--ink);margin-bottom:8px">Why this feels different</strong>It reads more like a boutique salon brand with mood, polish, and a little romance, rather than a reused slakka-style business shell.</div>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">why this works better</div>
-            <h2>Built more like a real local business homepage</h2>
-          </div>
-          <p>The earlier mockups proved throughput, but this pass is intentionally closer to the kind of clean, conversion-led salon sites Kunal referenced tonight.</p>
-        </div>
-        <div class="cards3">
-          <div class="card"><strong>Visual polish</strong><p>Clean manicure station visuals and premium spacing to feel trustworthy fast.</p></div>
-          <div class="card"><strong>Offer clarity</strong><p>A direct services and pricing path instead of brochure-style clutter.</p><span class="offer-price">Menu preview + CTA</span></div>
-          <div class="card"><strong>Booking intent</strong><p>Strong booking CTA repeated through the page for easy conversion.</p><span class="offer-price">Mobile-friendly funnel</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap split">
-        <div class="info-block">
-          <div class="eyebrow">sample service blocks</div>
-          <h2>Simple packages, stronger hierarchy</h2>
-          <div class="cards3" style="grid-template-columns:1fr; margin-top:18px;">
-            <div class="card"><strong>Signature manicure</strong><p>Short description, soft pricing anchor, and a clear reason to choose this service.</p></div>
-            <div class="card"><strong>BIAB overlay</strong><p>Stronger visual block for the highest-margin service or trend-led offer.</p></div>
-            <div class="card"><strong>Spa pedicure</strong><p>Third card gives enough menu depth without overwhelming a first-time visitor.</p></div>
-          </div>
-        </div>
-        <div class="info-block">
-          <div class="eyebrow">conversion notes</div>
-          <h2>What simpl would keep on the final live build</h2>
-          <div class="list">
-            <div class="list-item"><div class="bullet"></div><div>Fast mobile-first layout with one clear booking CTA repeated across the page.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Trust layer near the hero: review signal, address, and opening-hours/contact block.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Real image gallery, treatments list, and booking integration added on the final build.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Brand colours and tone tuned to the business rather than a generic salon template.</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap contact" id="contact">
-        <div>
-          <div class="eyebrow" style="color:#f0bddc;">demo target</div>
-          <h2>Beauty Nails Fitzroy</h2>
-          <p>123 Gertrude St, Fitzroy, VIC</p>
-          <p>This concept page is a simpl outreach demo, designed to show what a cleaner, more credible local-business website could look like before the full build.</p>
-        </div>
-        <div class="contact-card">
-          <div class="mono">Phone</div>
-          <p>(03) 9417 2814</p>
-          <div class="mono">Email</div>
-          <p>hello@beautynailsfitzroy.com.au</p>
-          <div class="mono">Online presence</div>
-          <p><a href="https://maps.google.com/?q=Beauty+Nails+Fitzroy">https://maps.google.com/?q=Beauty+Nails+Fitzroy</a></p>
-        </div>
-      </div>
-    </section>
+    <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">why this direction lands better</div><h2>Closer to modern salon inspiration, but still simple enough for local outreach</h2></div><p>This version keeps the build lightweight while making the visual language much more feminine and visually distinct.</p></div><div class="cards3"><div class="card"><strong>Editorial typography</strong><p>Playfair gives the hero a more premium beauty-brand feel straight away.</p></div><div class="card"><strong>Better mood</strong><p>Blush gradients and softer shapes make the page feel warmer and more aspirational.</p><span class="offer-price">More elegant first impression</span></div><div class="card"><strong>Still conversion-led</strong><p>The booking CTA and contact intent remain very obvious on mobile.</p><span class="offer-price">Designed to convert</span></div></div></div></section>
+    <section class="section"><div class="wrap split"><div class="info-block"><div class="eyebrow">sample feature blocks</div><h2>Simple service hierarchy with a premium tone</h2><div class="cards3" style="grid-template-columns:1fr;margin-top:18px"><div class="card"><strong>BIAB + natural overlays</strong><p>High-demand treatment positioned as a signature offer.</p></div><div class="card"><strong>Luxury spa pedicure</strong><p>Giftable and relaxing service block to widen the appeal.</p></div><div class="card"><strong>Occasion-ready nail art</strong><p>Subtle upsell section for bridal, events, and weekends.</p></div></div></div><div class="info-block"><div class="eyebrow">build notes</div><h2>What simpl would keep for the live version</h2><div class="list"><div class="list-item"><div class="bullet"></div><div>Real salon imagery swapped into the hero and support blocks.</div></div><div class="list-item"><div class="bullet"></div><div>Google reviews, opening hours, and booking app integrated above the fold.</div></div><div class="list-item"><div class="bullet"></div><div>Mobile menu simplified to services, gallery, pricing, and book now.</div></div><div class="list-item"><div class="bullet"></div><div>Colour system tuned to the actual salon interior and brand styling.</div></div></div></div></div></section>
+    <section class="section"><div class="wrap contact" id="contact"><div><div class="eyebrow" style="color:#f2b8cd">demo target</div><h2>Beauty Nails Fitzroy</h2><p>123 Gertrude St, Fitzroy, VIC</p><p>This simpl concept is designed to show a more elegant, women-first homepage direction before a full build with real photography and booking integration.</p></div><div class="contact-card"><div class="mono">Phone</div><p>(03) 9417 2814</p><div class="mono">Email</div><p>hello@beautynailsfitzroy.com.au</p><div class="mono">Online presence</div><p><a href="https://maps.google.com/?q=Beauty+Nails+Fitzroy">https://maps.google.com/?q=Beauty+Nails+Fitzroy</a></p></div></div></section>
   </main>
 </body>
 </html>

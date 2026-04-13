@@ -6,175 +6,32 @@
   <title>Polish & Co Prahran demo by simpl</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <style>
-    :root { --accent: #d26f8f; --accent-soft: #fde2ea; --ink: #1f1720; --muted: #6b606b; --card: rgba(255,255,255,.86); --line: rgba(31,23,32,.08); --bg: #fffafc; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: linear-gradient(180deg, #fffafc 0%, #ffffff 55%, #fff7fb 100%); }
-    a { color: inherit; }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-    .site-top { padding: 24px 0 10px; }
-    .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 14px 18px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.72); backdrop-filter: blur(10px); }
-    .brand { font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
-    .brand small { display:block; font-size:12px; color: var(--muted); font-weight: 600; letter-spacing: .16em; margin-top: 4px; }
-    .nav { display:flex; gap:18px; font-size:14px; color: var(--muted); }
-    .hero { padding: 28px 0 42px; }
-    .hero-grid { display:grid; grid-template-columns: 1.08fr .92fr; gap: 26px; align-items: stretch; }
-    .hero-copy, .hero-visual { border: 1px solid var(--line); border-radius: 30px; background: rgba(255,255,255,.74); }
-    .hero-copy { padding: 40px; box-shadow: 0 24px 70px rgba(48,24,53,.06); }
-    .eyebrow { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: .18em; font-weight: 800; }
-    h1, h2 { font-family: 'Cormorant Garamond', serif; margin: 0; line-height: .95; letter-spacing: -.03em; }
-    h1 { font-size: clamp(54px, 7vw, 92px); margin-top: 14px; max-width: 10ch; }
-    .lead { font-size: 19px; line-height: 1.7; color: var(--muted); max-width: 60ch; margin: 22px 0 28px; }
-    .actions { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; padding: 15px 22px; border-radius: 999px; text-decoration:none; font-weight: 700; }
-    .btn-primary { background: var(--ink); color: #fff; }
-    .btn-secondary { background: var(--accent-soft); color: var(--ink); }
-    .stat-row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
-    .stat { padding: 16px; border-radius: 20px; background: var(--accent-soft); }
-    .stat strong { display:block; font-size: 14px; }
-    .stat span { display:block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.5; }
-    .hero-visual { position: relative; overflow: hidden; padding: 26px; background: linear-gradient(135deg, rgba(255,255,255,.95), var(--accent-soft)); min-height: 620px; }
-    .hero-visual::before { content:''; position:absolute; inset:auto -70px -110px auto; width: 260px; height: 260px; background: radial-gradient(circle, rgba(255,255,255,.88), rgba(255,255,255,0)); }
-    .panel { position:relative; z-index:1; background: rgba(255,255,255,.92); border-radius: 28px; border:1px solid rgba(31,23,32,.08); box-shadow: 0 24px 60px rgba(30,21,31,.08); }
-    .screen-main { padding: 22px; }
-    .screen-nav, .price-chip-row, .contact-mini { display:flex; gap:10px; flex-wrap:wrap; }
-    .chip { padding: 8px 12px; border-radius: 999px; background: var(--accent-soft); font-size: 12px; font-weight: 700; }
-    .gallery { display:grid; grid-template-columns: 1.3fr .7fr; gap: 14px; margin-top: 16px; }
-    .gallery-card { border-radius: 24px; min-height: 220px; background: linear-gradient(160deg, rgba(255,255,255,.35), rgba(255,255,255,.05)), linear-gradient(135deg, var(--accent), #fff); position: relative; overflow:hidden; }
-    .gallery-card.small { min-height: 103px; }
-    .gallery-card::after { content:''; position:absolute; inset:16px; border-radius: 18px; border:1px solid rgba(255,255,255,.4); }
-    .quote-card { margin-top: 14px; padding: 16px 18px; background: #fff; border-radius: 22px; border:1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.6; }
-    .section { padding: 18px 0 34px; }
-    .section-head { display:flex; justify-content:space-between; gap:16px; align-items:end; margin-bottom: 18px; }
-    .section-head p { margin:0; color: var(--muted); max-width: 56ch; line-height:1.6; }
-    .cards3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .card { background: rgba(255,255,255,.82); border:1px solid var(--line); border-radius: 26px; padding: 24px; box-shadow: 0 16px 40px rgba(30,21,31,.05); }
-    .card p { margin: 10px 0 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
-    .offer-price { display:inline-block; margin-top: 14px; padding: 7px 11px; border-radius: 999px; background: var(--accent-soft); font-weight: 700; font-size: 12px; }
-    .split { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .info-block { background:#fff; border:1px solid var(--line); border-radius: 26px; padding: 24px; }
-    .list { display:grid; gap:12px; margin-top: 14px; }
-    .list-item { display:flex; gap:12px; align-items:flex-start; }
-    .bullet { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 7px; }
-    .contact { background: #1f1720; color:#fff; border-radius: 30px; padding: 30px; display:grid; grid-template-columns: 1.2fr .8fr; gap: 20px; }
-    .contact p, .contact a { color: rgba(255,255,255,.82); line-height:1.7; }
-    .contact-card { background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius: 24px; padding: 20px; }
-    .mono { font-size: 13px; letter-spacing: .02em; }
-    @media (max-width: 980px) { .hero-grid, .cards3, .split, .contact { grid-template-columns: 1fr; } .stat-row { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr; } .nav { display:none; } }
+    :root{--sand:#f6eee7;--rose:#d9859c;--ink:#22181d;--muted:#675962;--line:rgba(34,24,29,.1);--cream:#fffaf7}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#f8f0eb} a{text-decoration:none;color:inherit}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 24px}.site-top{padding:24px 0 10px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,250,247,.82)}
+    .brand{font-weight:800;letter-spacing:.04em;text-transform:uppercase}.brand small{display:block;margin-top:4px;color:var(--muted);font-size:12px;letter-spacing:.18em}.nav{display:flex;gap:18px;font-size:14px;color:var(--muted)}
+    .hero{padding:28px 0 40px}.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px}.hero-copy{padding:44px;border-radius:34px;background:#fff8f4;border:1px solid var(--line)}
+    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--rose)} h1,h2{font-family:'DM Serif Display',serif;margin:0;line-height:.95;letter-spacing:-.03em} h1{font-size:clamp(56px,8vw,98px);margin-top:14px;max-width:9ch}
+    .lead{margin:22px 0 30px;color:var(--muted);font-size:19px;line-height:1.75}.actions{display:flex;gap:14px;flex-wrap:wrap}.btn{padding:15px 22px;border-radius:999px;font-weight:800;display:inline-flex}.btn-primary{background:var(--ink);color:#fff}.btn-secondary{background:#f4dde5;color:var(--ink)}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{padding:16px;border-radius:20px;background:#f7e7ed}.stat strong{display:block;font-size:14px}.stat span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.5}
+    .hero-visual{border-radius:34px;overflow:hidden;background:#241a20;color:#fff;min-height:700px;padding:30px;position:relative}.hero-visual:before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.06),transparent 30%),radial-gradient(circle at top right,rgba(217,133,156,.5),transparent 33%),radial-gradient(circle at bottom left,rgba(255,255,255,.08),transparent 28%)}
+    .visual-shell{position:relative;z-index:1;display:grid;gap:18px}.editorial-frame,.quote-card,.mini-card,.lookbook{border-radius:30px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);backdrop-filter:blur(8px)}
+    .editorial-frame{padding:26px;min-height:330px;display:grid;align-content:space-between}.editorial-frame h2{font-size:48px;max-width:7ch}.lookbook{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;padding:18px}.look-main,.look-side{border-radius:24px;min-height:160px;background:linear-gradient(135deg,#ffcad9,#f3eef4 55%,#b48da0)} .look-side{background:linear-gradient(135deg,#fff,#f3d4df 55%,#d08aa4)}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mini-card{padding:20px}.mini-card p,.quote-card,.section-head p,.card p,.contact p,.contact a{color:rgba(255,255,255,.78);line-height:1.7}.quote-card{padding:22px;font-size:14px}.section{padding:18px 0 34px}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:18px}.section-head p{margin:0;color:var(--muted);max-width:56ch}
+    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.info-block{background:rgba(255,250,247,.9);border:1px solid var(--line);border-radius:28px;padding:24px}.card p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}.offer-price{display:inline-block;margin-top:14px;padding:7px 11px;border-radius:999px;background:#f6e0e8;font-weight:800;font-size:12px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.list{display:grid;gap:12px;margin-top:14px}.list-item{display:flex;gap:12px;align-items:flex-start}.bullet{width:10px;height:10px;border-radius:50%;background:var(--rose);margin-top:7px}.contact{background:#22181d;color:#fff;border-radius:32px;padding:30px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:20px}.mono{font-size:13px;letter-spacing:.03em}
+    @media (max-width:980px){.hero-grid,.cards3,.split,.contact,.stat-row,.lookbook,.mini-grid{grid-template-columns:1fr}.nav{display:none}}
   </style>
 </head>
 <body>
-  <div class="wrap site-top">
-    <div class="topbar">
-      <div class="brand">Polish & Co Prahran<small>simpl demo concept for Prahran</small></div>
-      <div class="nav"><span>services</span><span>gallery</span><span>pricing</span><span>contact</span></div>
-    </div>
-  </div>
+  <div class="wrap site-top"><div class="topbar"><div class="brand">Polish &amp; Co Prahran<small>editorial beauty concept</small></div><div class="nav"><span>new set menu</span><span>gallery</span><span>bookings</span><span>contact</span></div></div></div>
   <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">modern salon website concept</div>
-          <h1>A sharper, fashion-adjacent homepage for busy Chapel Street traffic.</h1>
-          <p class="lead">The direction here is cleaner and more editorial, aimed at salons that need to look current while still making booking frictionless on mobile.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#contact">View services</a>
-            <a class="btn btn-secondary" href="https://www.facebook.com/polishandco">Online presence</a>
-          </div>
-          <div class="stat-row">
-            <div class="stat"><strong>4.7 ★ Facebook + Google</strong><span>Trust signal placed high on the page.</span></div>
-            <div class="stat"><strong>gel manicures, nail art, express polish changes</strong><span>Offer framed with clearer service intent.</span></div>
-            <div class="stat"><strong>Mobile first</strong><span>Designed to feel cleaner and simpler on phones.</span></div>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="panel screen-main">
-            <div class="screen-nav">
-              <span class="chip">Book now</span>
-              <span class="chip">Top services</span>
-              <span class="chip">Reviews</span>
-            </div>
-            <div class="gallery">
-              <div class="gallery-card"></div>
-              <div>
-                <div class="gallery-card small"></div>
-                <div class="gallery-card small" style="margin-top:14px;"></div>
-              </div>
-            </div>
-            <div class="quote-card">
-              <strong style="display:block; color: var(--ink); margin-bottom:8px;">Hero section direction</strong>
-              Calm luxury styling, one dominant call-to-action, cleaner whitespace, and clearer proof points. This is closer to best-practice salon sites than the earlier abstract demo pass.
-            </div>
-            <div class="price-chip-row" style="margin-top:14px;">
-              <span class="chip">Express gel set</span>
-              <span class="chip">Signature nail art</span>
-              <span class="chip">Removal + refresh</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">why this works better</div>
-            <h2>Built more like a real local business homepage</h2>
-          </div>
-          <p>The earlier mockups proved throughput, but this pass is intentionally closer to the kind of clean, conversion-led salon sites Kunal referenced tonight.</p>
-        </div>
-        <div class="cards3">
-          <div class="card"><strong>Visual polish</strong><p>More visual polish in the hero so the business feels elevated immediately.</p></div>
-          <div class="card"><strong>Offer clarity</strong><p>Simple offer cards that make the first booking decision easier.</p><span class="offer-price">Menu preview + CTA</span></div>
-          <div class="card"><strong>Booking intent</strong><p>Social-proof strip and mobile-friendly layout for local traffic.</p><span class="offer-price">Mobile-friendly funnel</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap split">
-        <div class="info-block">
-          <div class="eyebrow">sample service blocks</div>
-          <h2>Simple packages, stronger hierarchy</h2>
-          <div class="cards3" style="grid-template-columns:1fr; margin-top:18px;">
-            <div class="card"><strong>Express gel set</strong><p>Short description, soft pricing anchor, and a clear reason to choose this service.</p></div>
-            <div class="card"><strong>Signature nail art</strong><p>Stronger visual block for the highest-margin service or trend-led offer.</p></div>
-            <div class="card"><strong>Removal + refresh</strong><p>Third card gives enough menu depth without overwhelming a first-time visitor.</p></div>
-          </div>
-        </div>
-        <div class="info-block">
-          <div class="eyebrow">conversion notes</div>
-          <h2>What simpl would keep on the final live build</h2>
-          <div class="list">
-            <div class="list-item"><div class="bullet"></div><div>Fast mobile-first layout with one clear booking CTA repeated across the page.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Trust layer near the hero: review signal, address, and opening-hours/contact block.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Real image gallery, treatments list, and booking integration added on the final build.</div></div>
-            <div class="list-item"><div class="bullet"></div><div>Brand colours and tone tuned to the business rather than a generic salon template.</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap contact" id="contact">
-        <div>
-          <div class="eyebrow" style="color:#f0bddc;">demo target</div>
-          <h2>Polish & Co Prahran</h2>
-          <p>45 Chapel St, Prahran, VIC</p>
-          <p>This concept page is a simpl outreach demo, designed to show what a cleaner, more credible local-business website could look like before the full build.</p>
-        </div>
-        <div class="contact-card">
-          <div class="mono">Phone</div>
-          <p>(03) 9510 4472</p>
-          <div class="mono">Email</div>
-          <p>bookings@polishandco.com.au</p>
-          <div class="mono">Online presence</div>
-          <p><a href="https://www.facebook.com/polishandco">https://www.facebook.com/polishandco</a></p>
-        </div>
-      </div>
-    </section>
+    <section class="hero"><div class="wrap hero-grid"><div class="hero-copy"><div class="eyebrow">fashion-adjacent salon direction</div><h1>A more editorial homepage for Chapel Street beauty traffic.</h1><p class="lead">This direction is cleaner, moodier, and more style-led. It is meant to feel closer to an elevated boutique salon brand, with a sharper visual identity than the earlier safe demo pass.</p><div class="actions"><a class="btn btn-primary" href="#contact">View services</a><a class="btn btn-secondary" href="https://www.facebook.com/polishandco">See current online presence</a></div><div class="stat-row"><div class="stat"><strong>4.7 ★ social + local trust</strong><span>Proof layered in without flattening the aesthetic.</span></div><div class="stat"><strong>Gel sets, detailed art, quick fixes</strong><span>Service mix matched to Prahran traffic.</span></div><div class="stat"><strong>Distinct look and feel</strong><span>Feels separate from a generic local-services site.</span></div></div></div><div class="hero-visual"><div class="visual-shell"><div class="editorial-frame"><div><div class="eyebrow">lookbook layout</div><h2>Beauty site with more attitude.</h2></div><div class="lookbook"><div class="look-main"></div><div class="look-side"></div></div></div><div class="mini-grid"><div class="mini-card"><strong>Trend-led service spotlight</strong><p>Bring forward the styles people actually browse for, not just a plain service list.</p></div><div class="mini-card"><strong>Clean mobile booking path</strong><p>Keep the CTA obvious while still giving the page stronger brand energy.</p></div></div><div class="quote-card"><strong style="display:block;color:#fff;margin-bottom:8px">Why this feels different</strong>This version swaps soft luxury for a more editorial beauty vibe. It should read as a clearly separate direction, not a recoloured clone.</div></div></div></div></section>
+    <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">what makes this stronger</div><h2>A more distinct visual lane for salons targeting style-conscious clients</h2></div><p>Rather than using the same layout logic as the other demos, this one borrows from editorial lookbook pages and boutique-beauty brands.</p></div><div class="cards3"><div class="card"><strong>Higher contrast</strong><p>The dark visual panel gives the page a more fashion-forward first impression.</p></div><div class="card"><strong>Sharper hierarchy</strong><p>Hero, service prompt, and gallery mood are cleaner and more deliberate.</p><span class="offer-price">More brand character</span></div><div class="card"><strong>Still practical</strong><p>Contact, reviews, and booking remain easy to find for real outreach use.</p><span class="offer-price">Local-business ready</span></div></div></div></section>
+    <section class="section"><div class="wrap split"><div class="info-block"><div class="eyebrow">service approach</div><h2>What the middle of the page could show</h2><div class="cards3" style="grid-template-columns:1fr;margin-top:18px"><div class="card"><strong>Express gel refresh</strong><p>Quick, polished service card for high-intent repeat clients.</p></div><div class="card"><strong>Signature nail art sets</strong><p>Visual-led block for the most Instagrammable service line.</p></div><div class="card"><strong>Removal + reshape appointments</strong><p>Useful utility service kept visible without looking clinical.</p></div></div></div><div class="info-block"><div class="eyebrow">live build notes</div><h2>What simpl would keep on the final version</h2><div class="list"><div class="list-item"><div class="bullet"></div><div>Real salon and hand-detail photography for the lookbook panel.</div></div><div class="list-item"><div class="bullet"></div><div>Instagram gallery embeds or review tiles for social proof.</div></div><div class="list-item"><div class="bullet"></div><div>Fast booking CTA fixed for mobile so the page stays conversion-led.</div></div><div class="list-item"><div class="bullet"></div><div>Colour palette tuned around the actual brand and fit-out.</div></div></div></div></div></section>
+    <section class="section"><div class="wrap contact" id="contact"><div><div class="eyebrow" style="color:#f2bac8">demo target</div><h2>Polish &amp; Co Prahran</h2><p>45 Chapel St, Prahran, VIC</p><p>This simpl concept shows a more editorial, boutique-beauty direction for a salon that wants more personality without losing booking clarity.</p></div><div class="contact-card"><div class="mono">Phone</div><p>(03) 9510 4472</p><div class="mono">Email</div><p>bookings@polishandco.com.au</p><div class="mono">Online presence</div><p><a href="https://www.facebook.com/polishandco">https://www.facebook.com/polishandco</a></p></div></div></section>
   </main>
 </body>
 </html>
